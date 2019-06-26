@@ -1,24 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JRb-wP-AJy">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AroundMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-bt-8cp">
+                                <rect key="frame" x="0.0" y="743" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" systemItem="camera" id="uW4-0D-rzT"/>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-Js-8jx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="655"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="655" id="kde-PO-RD2"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OBC-bt-8cp" firstAttribute="top" secondItem="ASQ-Js-8jx" secondAttribute="bottom" id="7vr-ku-fGK"/>
+                            <constraint firstAttribute="trailing" secondItem="ASQ-Js-8jx" secondAttribute="trailing" id="Caa-xM-yBn"/>
+                            <constraint firstItem="ASQ-Js-8jx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="88" id="DS4-59-mFc"/>
+                            <constraint firstItem="ASQ-Js-8jx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P0f-nV-hX5"/>
+                            <constraint firstItem="ASQ-Js-8jx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aNC-0L-y2s"/>
+                            <constraint firstItem="OBC-bt-8cp" firstAttribute="leading" secondItem="ASQ-Js-8jx" secondAttribute="leading" id="ndI-hk-t5A"/>
+                            <constraint firstItem="OBC-bt-8cp" firstAttribute="trailing" secondItem="ASQ-Js-8jx" secondAttribute="trailing" id="rlT-Hf-M4j"/>
+                            <constraint firstItem="ASQ-Js-8jx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vny-4K-h2f"/>
+                            <constraint firstItem="ASQ-Js-8jx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zDm-Ec-7Ca"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dLk-1C-KnH"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="ASQ-Js-8jx" id="gTZ-10-fFQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2868.115942028986" y="135.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QsN-1t-O2K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRb-wP-AJy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="upx-AC-CMk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Un-Yl-9xY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPg-3V-X8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="135.9375"/>
         </scene>
     </scenes>
 </document>
